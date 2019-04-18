@@ -1,0 +1,15 @@
+@import "_font"
+body
+	font: 16px "Roboto"
+	line-height: 1.2
+	height: 100%
+
+$browser-context: 16
+
+@function calc-em($target-px, $context)
+	@return ($target-px / $context) * 1em
+
+@function em($pixels, $context: $browser-context)
+	@return ($pixels / $context) * 1em
+
+$orange: #F47821

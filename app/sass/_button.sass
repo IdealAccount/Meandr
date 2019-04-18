@@ -1,0 +1,38 @@
+.btn
+	position: relative
+	z-index: 5
+	padding: 18px 30px 16px 46px
+	margin: 0 auto
+	height: em(54)
+	// width: em(236)
+	border-radius: 111px
+	font-family: 'Gilroy'
+	font-weight: bold
+	letter-spacing: .02em
+	text-transform: uppercase
+	&:before
+		content: '+'
+		display: flex
+		align-items: center
+		position: absolute
+		z-index: 1
+		top: 50%
+		left: 0
+		font-family: Roboto
+		font-size: 26px
+		font-weight: 400
+		color: $orange
+		transform: translateY(-50%)
+		width: em(54,26)
+		height: em(54,26)
+		padding-left: 20px
+		background: rgba(#878787, .1)
+		border-radius: 111px
+		transition: width .3s
+	&:hover:before
+		width: 100%
+	&-img
+		position: absolute
+		top: 50%
+		left: 27px
+		transform: translate(-50%,-50%)

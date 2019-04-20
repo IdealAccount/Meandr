@@ -165,18 +165,11 @@ body {
   padding-left: 20px;
   background: rgba(135, 135, 135, 0.1);
   border-radius: 111px;
-  transition: width .3s;
+  transition: .3s;
 }
 
 .btn:hover:before {
   width: 100%;
-}
-
-.btn-img {
-  position: absolute;
-  top: 50%;
-  left: 27px;
-  transform: translate(-50%, -50%);
 }
 
 .wrapper {
@@ -355,7 +348,7 @@ form {
 
 .input-row label {
   position: relative;
-  color: #fff;
+  color: #f9f9f9;
   letter-spacing: -.01em;
   font-weight: 600;
   margin-bottom: 24px;
@@ -379,6 +372,7 @@ form {
 }
 
 .input-row input, .input-row textarea {
+  order: 1;
   padding: 12px 0;
   font-size: 1.5em;
   font-family: 'Roboto';
@@ -389,11 +383,18 @@ form {
   border-width: 0 0 2px 0;
 }
 
+.input-row input:focus ~ label:before, .input-row textarea:focus ~ label:before {
+  border-color: #F47821;
+  color: #fff;
+}
+
 .input-row textarea {
   resize: none;
 }
 
-input[type=submit] {
+.btn-send {
+  position: relative;
+  z-index: 5;
   width: 100%;
   height: 54px;
   background: #fff;
@@ -404,4 +405,28 @@ input[type=submit] {
   font: 0.875em "Gilroy";
   letter-spacing: .04em;
   text-align: center;
+  transition: .2s linear;
+  overflow: hidden;
+}
+
+.btn-send:before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 0;
+  height: 100%;
+  border-radius: 111px;
+  background: #F47821;
+  transition: .3s ease-in-out;
+}
+
+.btn-send:hover, .btn-send:focus {
+  color: #fff;
+}
+
+.btn-send:hover:before, .btn-send:focus:before {
+  width: 100%;
 }
